@@ -5,6 +5,11 @@ Collection API is an API project that allows users to register, log in, create a
 You can access the API documentation at the following URL: http://ec2-44-204-238-126.compute-1.amazonaws.com/api-docs
 
 ## Installation
+Fist off all, install the dependencies, run the following command:
+```bash
+yarn install
+```
+
 To create the database, run the following command:
 ```bash
 docker-compose up -d
@@ -13,6 +18,12 @@ docker-compose up -d
 To populate the database with initial data, run the following command:
 ```bash
 yarn seed
+```
+
+Make sure to create a .env file and define the correct environment variables:
+```bash
+JWT_SECRET=any_secret_key
+DATABASE_URL="postgresql://admin:admin@localhost:5432/collection?schema=public"
 ```
 
 Now you can run using the following command:
