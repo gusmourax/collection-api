@@ -16,4 +16,6 @@ export default async () => {
       skipDuplicates: true,
     });
   }
+
+  await prisma.$disconnect();
 };
