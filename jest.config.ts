@@ -1,5 +1,5 @@
 export default {
-  bail: true,
+  bail: 1,
   moduleFileExtensions: ['js', 'json', 'ts'],
   rootDir: '.',
   testRegex: '.spec.ts$',

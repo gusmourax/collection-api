@@ -203,7 +203,7 @@ describe('ComponentsService', () => {
   });
 
   describe('findAllCategories', () => {
-    it('should return a FindCategoryResponse[] if success', async () => {
+    it('should return a FindCategoryResponse list if success', async () => {
       const result = await sut.findAllCategories();
 
       expect(result).toEqual([

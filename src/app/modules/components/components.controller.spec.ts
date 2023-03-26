@@ -37,7 +37,11 @@ describe('ComponentsController', () => {
   };
   let sut: ComponentsController;
 
-  beforeEach(async () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       controllers: [ComponentsController],
       providers: [
@@ -60,10 +64,6 @@ describe('ComponentsController', () => {
     sut = moduleRef.get<ComponentsController>(ComponentsController);
     app = moduleRef.createNestApplication();
     await app.init();
-  });
-
-  afterEach(async () => {
-    await app.close();
   });
 
   it('should be defined', () => {
@@ -373,5 +373,9 @@ describe('ComponentsController', () => {
         .get('/components/categories')
         .expect(401);
     });
+  });
+
+  afterAll(async () => {
+    await app.close();
   });
 });

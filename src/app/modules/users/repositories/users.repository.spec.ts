@@ -32,6 +32,10 @@ describe('UsersRepository', () => {
     sut = moduleRef.get<UsersRepository>(UsersRepository);
   });
 
+  it('should be defined', () => {
+    expect(sut).toBeDefined();
+  });
+
   describe('create', () => {
     it('should return a CreateUserResponse if success', async () => {
       const user = await sut.create({

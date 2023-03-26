@@ -22,7 +22,11 @@ describe('AuthController', () => {
     }),
   };
 
-  beforeEach(async () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       controllers: [AuthController],
       providers: [
@@ -35,12 +39,7 @@ describe('AuthController', () => {
 
     app = moduleRef.createNestApplication();
     sut = moduleRef.get<AuthController>(AuthController);
-    jest.clearAllMocks();
     await app.init();
-  });
-
-  afterEach(async () => {
-    await app.close();
   });
 
   it('should be defined', () => {
@@ -211,5 +210,9 @@ describe('AuthController', () => {
         .send(body)
         .expect(401);
     });
+  });
+
+  afterAll(async () => {
+    await app.close();
   });
 });
