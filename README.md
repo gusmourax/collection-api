@@ -2,7 +2,7 @@
 Collection API is an API project that allows users to register, log in, create and list components, and create and list component categories. It also has different levels of permission for users: ADMIN and PRO.
 
 ## Documentation
-You can access the API documentation at the following URL: http://ec2-44-204-238-126.compute-1.amazonaws.com/api-docs
+You can access the API documentation at the following URL: http://ec2-44-203-145-172.compute-1.amazonaws.com/api-docs
 
 ## Installation
 Fist off all, install the dependencies, run the following command:
