@@ -3,17 +3,15 @@ import {
   CreateCategoryResponse,
 } from '@modules/components/categories/dto/create-category.dto';
 import { FindCategoryResponse } from '@modules/components/categories/dto/find-category.dto';
-import { PrismaClient } from '@prisma/client';
+import { Injectable } from '@nestjs/common';
 import { generateUUID } from '@utils/uuid.utils';
+import { PrismaService } from 'app/database/prisma.service';
 import { CategoryAlreadyExists } from '../errors';
 import { ICategoriesRepository } from './categories-repository.interface';
 
+@Injectable()
 export class CategoriesRepository implements ICategoriesRepository {
-  private readonly prisma: PrismaClient;
-
-  constructor() {
-    this.prisma = new PrismaClient();
-  }
+  constructor(private readonly prisma: PrismaService) {}
 
   async create(data: CreateCategoryRequest): Promise<CreateCategoryResponse> {
     const categoryAlreadyExists = await this.prisma.category.findUnique({

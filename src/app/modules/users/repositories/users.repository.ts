@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaClient } from '@prisma/client';
 import { generateUUID } from '@utils/uuid.utils';
 import { CreateUserRequest, CreateUserResponse } from '../dto/create-user.dto';
 import { UserRole } from '../enums/user-role.enum';
@@ -9,14 +8,11 @@ import {
   FindByEmailResponse,
   FindByIdUserResponse,
 } from '../dto/find-user.dto';
+import { PrismaService } from 'app/database/prisma.service';
 
 @Injectable()
 export class UsersRepository implements IUsersRepository {
-  private readonly prisma: PrismaClient;
-
-  constructor() {
-    this.prisma = new PrismaClient();
-  }
+  constructor(private readonly prisma: PrismaService) {}
 
   async create(data: CreateUserRequest): Promise<CreateUserResponse> {
     const userAlreadyExists = await this.prisma.user.findUnique({

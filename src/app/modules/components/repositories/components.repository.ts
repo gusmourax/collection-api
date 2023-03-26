@@ -6,16 +6,14 @@ import {
   FindAllComponentsRequest,
   FindAllComponentsResponse,
 } from '@modules/components/dto/find-component.dto';
-import { PrismaClient } from '@prisma/client';
+import { Injectable } from '@nestjs/common';
 import { generateUUID } from '@utils/uuid.utils';
+import { PrismaService } from 'app/database/prisma.service';
 import { IComponentsRepository } from './components-repository.interface';
 
+@Injectable()
 export class ComponentsRepository implements IComponentsRepository {
-  private readonly prisma: PrismaClient;
-
-  constructor() {
-    this.prisma = new PrismaClient();
-  }
+  constructor(private readonly prisma: PrismaService) {}
 
   async findAll(
     data: FindAllComponentsRequest,
