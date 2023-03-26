@@ -14,17 +14,17 @@ To create the database, run the following command:
 ```bash
 docker-compose up -d
 ```
+Make sure to create a .env file and define the correct environment variables:
+```bash
+JWT_SECRET=any_secret_key
+DATABASE_URL="postgresql://admin:admin@localhost:5432/collection?schema=public"
+```
 
 To populate the database with initial data, run the following command:
 ```bash
 yarn seed
 ```
 
-Make sure to create a .env file and define the correct environment variables:
-```bash
-JWT_SECRET=any_secret_key
-DATABASE_URL="postgresql://admin:admin@localhost:5432/collection?schema=public"
-```
 
 Now you can run using the following command:
 ```bash
