@@ -3,7 +3,7 @@ version: '3.8'
 services:
   database:
     image: postgres:13.6
-    container_name: postgres_database
+    container_name: collection_database
     restart: always
     environment:
       - POSTGRES_USER=admin
