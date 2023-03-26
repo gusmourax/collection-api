@@ -20,7 +20,7 @@ JWT_SECRET=any_secret_key
 DATABASE_URL="postgresql://admin:admin@localhost:5432/collection?schema=public"
 ```
 
-To populate the database with initial data, run the following command:
+To run migrations and populate the database with initial data, run the following command:
 ```bash
 yarn seed
 ```
@@ -31,8 +31,20 @@ Now you can run using the following command:
 yarn start:dev
 ```
 
+## Test
+You can run tests with the following command:
+```bash
+yarn test
+```
+
 ## Usage
 This API has two levels of permission for users: ADMIN and PRO. Only users with ADMIN permission can create and list component categories and create components. Users with PRO permission can only list components.
+
+Seed Users:
+```bash
+email: admin@collection.com.br | password: admin | role: ADMIN
+email: pro@collection.com.br | password: userpro | role: PRO
+```
 
 ## Credits
 Made By Gustavo Moura</br>
