@@ -22,3 +22,7 @@ yarn start:dev
 
 ## Usage
 This API has two levels of permission for users: ADMIN and PRO. Only users with ADMIN permission can create and list component categories and create components. Users with PRO permission can only list components.
+
+## Credits
+Made By Gustavo Moura</br>
+Linkedin: https://www.linkedin.com/in/gustavomoura5555/
