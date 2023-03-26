@@ -7,7 +7,7 @@ import {
   FindAllComponentsRequest,
   FindAllComponentsResponse,
 } from './dto/find-component.dto';
-import { CategoryAlreadyExists } from './categories/errors';
+import { CategoryDoesNotExists } from './categories/errors';
 import { CategoriesRepository } from './categories/repositories/categories.repository';
 import { ComponentsRepository } from './repositories/components.repository';
 import {
@@ -29,7 +29,7 @@ export class ComponentsService {
     );
 
     if (categories.length !== data.categories.length)
-      throw new CategoryAlreadyExists();
+      throw new CategoryDoesNotExists();
 
     const { id } = await this.componentsRepository.create({
       title: data.title,

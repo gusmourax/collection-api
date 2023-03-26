@@ -5,7 +5,7 @@ import {
 import { FindCategoryResponse } from '@modules/components/categories/dto/find-category.dto';
 import { Injectable } from '@nestjs/common';
 import { generateUUID } from '@utils/uuid.utils';
-import { PrismaService } from 'app/database/prisma.service';
+import { PrismaService } from '@app/database/prisma.service';
 import { CategoryAlreadyExists } from '../errors';
 import { ICategoriesRepository } from './categories-repository.interface';
 

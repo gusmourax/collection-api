@@ -8,7 +8,7 @@ import {
   FindByEmailResponse,
   FindByIdUserResponse,
 } from '../dto/find-user.dto';
-import { PrismaService } from 'app/database/prisma.service';
+import { PrismaService } from '@app/database/prisma.service';
 
 @Injectable()
 export class UsersRepository implements IUsersRepository {

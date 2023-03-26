@@ -8,7 +8,7 @@ import {
 } from '@modules/components/dto/find-component.dto';
 import { Injectable } from '@nestjs/common';
 import { generateUUID } from '@utils/uuid.utils';
-import { PrismaService } from 'app/database/prisma.service';
+import { PrismaService } from '@app/database/prisma.service';
 import { IComponentsRepository } from './components-repository.interface';
 
 @Injectable()
