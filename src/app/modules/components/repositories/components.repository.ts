@@ -32,7 +32,7 @@ export class ComponentsRepository implements IComponentsRepository {
         },
         skip: (page - 1) * limit,
         take: limit,
-        orderBy: { createdAt: 'desc' },
+        orderBy: { title: 'asc' },
         include: { categories: true },
       }),
       this.prisma.component.count({

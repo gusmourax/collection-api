@@ -2,7 +2,6 @@ import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
   ApiBearerAuth,
-  ApiBody,
   ApiCreatedResponse,
   ApiForbiddenResponse,
   ApiOkResponse,
@@ -36,7 +35,6 @@ export class ComponentsController {
     summary: 'Create a new component',
     description: 'Create a new component',
   })
-  @ApiBody({ type: CreateComponentRequest })
   @ApiCreatedResponse({
     description: 'Component created',
     type: CreateComponentResponse,
@@ -86,7 +84,6 @@ export class ComponentsController {
     summary: 'Create a new component category',
     description: 'Create a new component category',
   })
-  @ApiBody({ type: CreateCategoryRequest })
   @ApiCreatedResponse({
     description: 'Category created',
     type: CreateCategoryResponse,

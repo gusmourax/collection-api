@@ -1,7 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
-  ApiBody,
   ApiCreatedResponse,
   ApiOperation,
   ApiTags,
@@ -20,7 +19,6 @@ export class AuthController {
     summary: 'Create a new user',
     description: 'Create a new PRO user account',
   })
-  @ApiBody({ type: SignupRequest })
   @ApiCreatedResponse({ description: 'User created', type: SignupResponse })
   @ApiBadRequestResponse({ description: 'User already exists' })
   @ApiBadRequestResponse({ description: 'Invalid password confirmation' })
@@ -40,7 +38,6 @@ export class AuthController {
     summary: 'Login',
     description: 'Login with email and password',
   })
-  @ApiBody({ type: LoginRequest })
   @ApiCreatedResponse({ description: 'User logged in', type: LoginResponse })
   @ApiUnauthorizedResponse({ description: 'Invalid credentials' })
   @Post('/login')
